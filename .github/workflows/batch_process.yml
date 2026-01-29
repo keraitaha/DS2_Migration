@@ -1,0 +1,21 @@
+name: Data Migration with Lune
+on:
+  workflow_dispatch: # Allows manual start
+
+jobs:
+  run-lune:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Install Lune
+        uses: lowlighter/setup-lune@v1 # Official action to install Lune
+        with:
+          version: 'latest'
+
+      - name: Run Batch Processor
+        env:
+          API_KEY: ${{ secrets.API_KEY }}
+        run: |
+          lune run batch_process resume DS2_Migration -c examples/ds2-config.json
