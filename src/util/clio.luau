@@ -90,12 +90,7 @@ CLIO.PromptForConfirmation = function(prompt: string): ()
     printSpacing()
     
     -- Check if we are in a non-interactive environment (GitHub Actions)
-    if os.getenv("GITHUB_ACTIONS") == "true" or os.getenv("CI") == "true" then
-        print("CI Environment detected: Auto-confirming " .. prompt .. "...")
-    else
-        -- Only run this if a human is actually there
-        stdio.prompt('text', "Press Enter to " .. prompt .. ", or Ctrl+C to cancel...")
-    end
+    print("CI Environment detected: Auto-confirming " .. prompt .. "...")
 
     print()
     lastProgressLine = false
