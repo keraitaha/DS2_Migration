@@ -9,10 +9,18 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Install Lune
-        uses: lowlighter/setup-lune@v1 # Official action to install Lune
-        with:
-          version: 'latest'
+      - name: Install Lune Manually
+        shell: bash
+        run: |
+          curl -L https://github.com/lune-org/lune/releases/latest/download/lune-linux-x86_64.zip -o lune.zip
+          
+          sudo apt-get install -y unzip
+          unzip lune.zip
+          
+          chmod +x lune
+          sudo mv lune /usr/local/bin/lune
+          
+          lune --version
 
       - name: Run Batch Processor
         env:
