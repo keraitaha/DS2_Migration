@@ -1,0 +1,25 @@
+ Process Name          | Create Time           | Last Update Time      | Status                | Scanned               | Processed             | Failed                
+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------
+ DS2_Migration         | 2026-01-25 09:48:45   | 2026-01-28 18:16:45   | InProgress            | 102336                | 101920                | 0                     
+
+Configurations:
+---------------
+{
+  "callback": "examples/ds2-migrate-delete-all.luau",
+  "dataStorePrefix": "AllData/",
+  "errorLogMaxLength": 50,
+  "jobQueueMaxSize": 20,
+  "maxItemsPerJob": 50,
+  "maxTotalFailedItems": 20,
+  "memoryStoresExpiration": 3888000,
+  "memoryStoresStorageLimit": 177,
+  "numProcessingInstances": 9,
+  "numRetries": 5,
+  "outputDirectory": "output",
+  "placeId": "12893488117",
+  "processItemRateLimit": 50,
+  "progressRefreshTimeout": 5,
+  "retryExponentialBackoff": 3,
+  "retryTimeoutBase": 1,
+  "universeId": "4512331818"
+}
