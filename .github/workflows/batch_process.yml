@@ -12,7 +12,7 @@ jobs:
       - name: Install Lune Manually
         shell: bash
         run: |
-          curl -L https://github.com/lune-org/lune/releases/latest/download/lune-linux-x86_64.zip -o lune.zip
+          curl -L https://github.com/lune-org/lune/releases/download/v0.10.4/lune-0.10.4-linux-x86_64.zip -o lune.zip
           
           sudo apt-get install -y unzip
           unzip lune.zip
