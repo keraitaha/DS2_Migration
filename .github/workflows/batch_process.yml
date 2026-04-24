@@ -1,6 +1,6 @@
 name: Data Migration with Lune
 on:
-  workflow_dispatch: # Allows manual start
+  workflow_dispatch:
 
 jobs:
   run-lune:
@@ -9,7 +9,7 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Install Lune Manually
+      - name: Install Lune
         shell: bash
         run: |
           curl -L https://github.com/lune-org/lune/releases/download/v0.10.4/lune-0.10.4-linux-x86_64.zip -o lune.zip
